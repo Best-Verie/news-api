@@ -1,13 +1,11 @@
 package com.example.newsapi.controller;
 
+import com.example.newsapi.dto.CreateUserDto;
 import com.example.newsapi.model.User;
 import com.example.newsapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -21,7 +19,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(User user) {
+    public ResponseEntity<?> registerUser(@RequestBody CreateUserDto user) {
         return userService.registerUser(user);
     }
 
