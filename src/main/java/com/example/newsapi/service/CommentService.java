@@ -23,10 +23,7 @@ public class CommentService {
         Comment comment = new Comment();
         comment.setComment(commentDto.getComment());
         comment.setAuthor(commentDto.getAuthor());
-        System.out.println("commentDto" + commentDto);
-        System.out.println(commentDto.getArticleId());
         Article article = articleService.getArticleById(commentDto.getArticleId()).get();
-        System.out.println("article" + article);
         comment.setArticle(article);
 
         return commentRepository.save(comment);

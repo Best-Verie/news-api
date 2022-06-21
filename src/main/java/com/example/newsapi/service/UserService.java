@@ -44,4 +44,7 @@ public class UserService {
         return ResponseEntity.ok(userRepository.save(newUser));
     }
 
+    public User getUserById(Long id) {
+        return userRepository.findById(id).get();
+    }
 }
