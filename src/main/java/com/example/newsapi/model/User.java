@@ -4,11 +4,13 @@ import javax.persistence.*;
 
 import com.example.newsapi.enumerations.ERoles;
 
+import java.util.Set;
+
 @Entity
 @Table(name="users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
@@ -18,6 +20,7 @@ public class User {
     private String password;
     private String username;
     private ERoles role;
+
 
     public User() {
     }

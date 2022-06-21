@@ -1,32 +1,28 @@
 package com.example.newsapi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Article {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
-    private String url;
     private String urlToImage;
-    private String publishedAt;
     private String content;
+
+
 
     public Article() {
     }
 
-    public Article(Long id, String title, String description, String url, String urlToImage, String publishedAt, String content) {
-        this.id = id;
+
+
+    public Article(String title, String description, String urlToImage, String content) {
         this.title = title;
         this.description = description;
-        this.url = url;
         this.urlToImage = urlToImage;
-        this.publishedAt = publishedAt;
         this.content = content;
     }
 
@@ -54,28 +50,12 @@ public class Article {
         this.description = description;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public String getUrlToImage() {
         return urlToImage;
     }
 
     public void setUrlToImage(String urlToImage) {
         this.urlToImage = urlToImage;
-    }
-
-    public String getPublishedAt() {
-        return publishedAt;
-    }
-
-    public void setPublishedAt(String publishedAt) {
-        this.publishedAt = publishedAt;
     }
 
     public String getContent() {
@@ -85,4 +65,6 @@ public class Article {
     public void setContent(String content) {
         this.content = content;
     }
+
+
 }
